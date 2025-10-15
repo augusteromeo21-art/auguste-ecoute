@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auguste Romeo - Écoute Active & Empathique | Active & Empathic Listening</title>
+    <meta name="description" content="Services professionnels d'écoute active, coaching de vie et développement personnel au Cameroun">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2c5f7f;
+            --secondary: #4a9eba;
+            --accent: #f39c12;
+            --warm: #e8f4f8;
+            --text: #2c3e50;
+            --light: #ecf0f1;
+            --success: #27ae60;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .lang-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .lang-switch:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 80px 20px 60px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .profile-section {
+            max-width: 1200px;
+            margin: 0 auto 30px;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            object-fit: cover;
+            margin: 0 auto 20px;
+            display: block;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.95;
+            margin-bottom: 20px;
+        }
+
+        .hero-description {
+            max-width: 800px;
+            margin: 20px auto;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .section {
+            background: white;
+            margin: 30px 0;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        h2 {
+            color: var(--primary);
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            font-size: 2em;
+        }
+
+        h3 {
+            color: var(--secondary);
+            margin: 25px 0 15px;
+            font-size: 1.5em;
+        }
+
+        .schedule {
+            background: var(--warm);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid var(--primary);
+        }
+
+        .schedule-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .schedule-item:last-child {
+            border-bottom: none;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #f6f9fc 0%, #ffffff 100%);
+            padding: 30px;
+            border-radius: 12px;
+            border: 2px solid var(--light);
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            border-color: var(--secondary);
+            box-shadow: 0 8px 25px rgba(74, 158, 186, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .service-title {
+            font-size: 1.3em;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .service-price {
+            font-size: 1.8em;
+            color: var(--accent);
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .service-duration {
+            color: #7f8c8d;
+            font-style: italic;
+        }
+
+        .special-badge {
+            background: var(--success);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin: 10px 0;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+
+        .packs-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .pack {
+            background: white;
+            border-radius: 15px;
+            padding: 35px;
+            text-align: center;
+            border: 3px solid;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pack::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, transparent, currentColor, transparent);
+        }
+
+        .pack-bronze {
+            border-color: #cd7f32;
+            color: #cd7f32;
+        }
+
+        .pack-silver {
+            border-color: #c0c0c0;
+            color: #808080;
+        }
+
+        .pack-gold {
+            border-color: #ffd700;
+            color: #daa520;
+        }
+
+        .pack-diamond {
+            border-color: #b9f2ff;
+            color: #4a9eba;
+            background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
+        }
+
+        .pack:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+
+        .pack-name {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .pack-price {
+            font-size: 2.2em;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .pack-features {
+            list-style: none;
+            margin: 25px 0;
+            text-align: left;
+        }
+
+        .pack-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid #ecf0f1;
+            color: var(--text);
+        }
+
+        .pack-features li:before {
+            content: '✓ ';
+            color: var(--success);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .solidarity-message {
+            background: linear-gradient(135deg, #fef5e7 0%, #fdebd0 100%);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid var(--accent);
+            margin: 20px 0;
+            font-style: italic;
+            color: #7d6608;
+        }
+
+        .contact-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin: 30px 0;
+        }
+
+        .btn {
+            padding: 15px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        .btn-emergency {
+            background: #e74c3c;
+            color: white;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.2);
+        }
+
+        .payment-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .payment-card {
+            background: var(--warm);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .payment-card h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .payment-number {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: var(--accent);
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        .country-price-info {
+            background: #e8f8f5;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid var(--success);
+        }
+
+        footer {
+            background: var(--text);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+        }
+
+        .lang-en { display: none; }
+        body.english .lang-fr { display: none; }
+        body.english .lang-en { display: block; }
+
+        .whatsapp-icon::before {
+            content: '📱';
+            margin-right: 5px;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8em; }
+            .section { padding: 25px 20px; }
+            .packs-container { grid-template-columns: 1fr; }
+        }
+
+        .additional-services {
+            background: linear-gradient(135deg, #fff5e6 0%, #ffe6cc 100%);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+
+        .service-detail {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .step {
+            background: var(--warm);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .step-number {
+            background: var(--primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="lang-switch" onclick="toggleLanguage()">
+        <span class="lang-fr">🇬🇧 English</span>
+        <span class="lang-en">🇫🇷 Français</span>
+    </div>
+
+    <header>
+        <div class="profile-section">
+            <img src="IMG_20251014_113514_944.jpg" alt="Auguste Romeo NJIPMOU NOUGUEP" class="profile-img" id="profileImage">
+            <h1>Auguste Romeo NJIPMOU NOUGUEP</h1>
+            <p class="subtitle lang-fr">Praticien en Écoute Active & Empathique | Coach de Vie</p>
+            <p class="subtitle lang-en">Active & Empathic Listening Practitioner | Life Coach</p>
+            <div class="hero-description lang-fr">
+                <p>Fort d'une formation en sciences économiques et gestion, je me suis naturellement orienté vers ma véritable vocation : l'accompagnement humain. En tant qu'autodidacte passionné et praticien hyperempathique, j'ai développé une approche unique centrée sur l'écoute bienveillante et le développement personnel.</p>
+                <p style="margin-top: 15px;">Mon engagement va au-delà de la simple prestation de services. Chaque consultation contribue à un système solidaire permettant d'offrir une écoute gratuite à ceux qui n'ont pas les moyens financiers mais qui en ont besoin.</p>
+            </div>
+            <div class="hero-description lang-en">
+                <p>With a background in economics and management, I naturally moved toward my true calling: human support. As a passionate self-taught practitioner with high empathy, I've developed a unique approach focused on compassionate listening and personal development.</p>
+                <p style="margin-top: 15px;">My commitment goes beyond simple service delivery. Each consultation contributes to a solidarity system that provides free listening sessions to those who need them but cannot afford them.</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="section">
+            <h2 class="lang-fr">📅 Horaires de Disponibilité</h2>
+            <h2 class="lang-en">📅 Availability Schedule</h2>
+            <div class="schedule">
+                <div class="schedule-item">
+                    <strong class="lang-fr">Lundi - Jeudi</strong>
+                    <strong class="lang-en">Monday - Thursday</strong>
+                    <span>8h00 - 17h30</span>
+                </div>
+                <div class="schedule-item">
+                    <strong class="lang-fr">Vendredi</strong>
+                    <strong class="lang-en">Friday</strong>
+                    <span>8h00 - 15h30</span>
+                </div>
+                <div class="schedule-item">
+                    <strong class="lang-fr">Samedi</strong>
+                    <strong class="lang-en">Saturday</strong>
+                    <span>9h00 - 14h00</span>
+                </div>
+                <div class="schedule-item">
+                    <strong class="lang-fr">Mercredi (Spécial)</strong>
+                    <strong class="lang-en">Wednesday (Special)</strong>
+                    <span class="lang-fr">Écoute gratuite pour élèves, étudiants, sans-emploi (Cameroun)</span>
+                    <span class="lang-en">Free listening for students, unemployed (Cameroon)</span>
+                </div>
+            </div>
+        </div>
+
+       <div class="section">
+            <h2 class="lang-fr">🎧 Services d'Écoute Active</h2>
+            <h2 class="lang-en">🎧 Active Listening Services</h2>
+           
+            <!-- Section de tarification automatique - Sera mise à jour par le script -->
+            <div id="auto-pricing-info"></div> 
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-title lang-fr">🌱 Séance Découverte</div>
+                    <div class="service-title lang-en">🌱 Discovery Session</div>
+                    <div class="service-price" data-base-price="1000">1 000 FCFA</div>
+                    <div class="service-duration">30 min</div>
+                    <span class="special-badge lang-fr">Cameroun uniquement</span>
+                    <span class="special-badge lang-en">Cameroon only</span>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-title lang-fr">💬 Séance Standard</div>
+                    <div class="service-title lang-en">💬 Standard Session</div>
+                    <div class="service-price" data-base-price="3000">3 000 FCFA</div>
+                    <div class="service-duration">1h</div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-title lang-fr">🆘 Urgence Émotionnelle</div>
+                    <div class="service-title lang-en">🆘 Emotional Emergency</div>
+                    <div class="service-price" data-base-price="2000">2 000 FCFA</div>
+                    <div class="service-duration">30 min</div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-title lang-fr">💑 Écoute de Couple</div>
+                    <div class="service-title lang-en">💑 Couples Listening</div>
+                    <div class="service-price" data-base-price="5000">5 000 FCFA</div>
+                    <div class="service-duration">1h</div>
+                </div>
+
+                <div class="service-card" style="grid-column: 1/-1; background: linear-gradient(135deg, #d4f1d4 0%, #a8e6cf 100%);">
+                    <div class="service-title lang-fr">🎓 Mercredi Solidaire - GRATUIT</div>
+                    <div class="service-title lang-en">🎓 Solidarity Wednesday - FREE</div>
+                    <div class="service-price" data-base-price="0" data-wednesday="true">GRATUIT</div>
+                    <p class="lang-fr"><strong>Pour élèves, étudiants et personnes sans emploi (Cameroun)</strong></p>
+                    <p class="lang-en"><strong>For students and unemployed persons (Cameroon)</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="lang-fr">✨ Services Complémentaires de Développement Personnel</h2>
+            <h2 class="lang-en">✨ Additional Personal Development Services</h2>
+            
+            <div class="additional-services">
+                <div class="service-detail">
+                    <h3 class="lang-fr">🎯 Coaching de Vie à partir de - <span class="dynamic-price" data-base-price="5000">5 000 FCFA</span></h3>
+		    <h3 class="lang-en">🎯 Life Coaching from - <span class="dynamic-price" data-base-price="5000">5 000 FCFA</span></h3>
+                    <p class="lang-fr">Accompagnement personnalisé pour définir et atteindre vos objectifs de vie</p>
+                    <p class="lang-en">Personalized support to define and achieve your life goals</p>
+                </div>
+
+                <div class="service-detail">
+                    <h3 class="lang-fr">💪 Renforcement de la Confiance en Soi à partir de - <span class="dynamic-price" data-base-price="22000">22 000 FCFA</span></h3>
+		    <h3 class="lang-en">💪 Building Self-Confidence from - <span class="dynamic-price" data-base-price="22000">22 000 FCFA</span></h3>
+                    <p class="lang-fr">développer une estime de soi solide et durable</p>
+                    <p class="lang-en">develop strong and lasting self-esteem</p>
+                </div>
+
+                <div class="service-detail">
+                    <h3 class="lang-fr">🤝 Amélioration du Langage Corporel à partir de - <span class="dynamic-price" data-base-price="15000">15 000 FCFA</span></h3>
+		    <h3 class="lang-en">🤝 Improving Body Language from - <span class="dynamic-price" data-base-price="15000">15 000 FCFA</span></h3>
+                    <p class="lang-fr">Maîtrisez votre communication non-verbale pour plus d'impact</p>
+                    <p class="lang-en">Master your non-verbal communication for greater impact</p>
+                </div>
+
+                <div class="service-detail">
+                    <h3 class="lang-fr">🗣️ Amélioration de l'Expression Orale à partir de - <span class="dynamic-price" data-base-price="6000">6 000 FCFA</span></h3>
+		    <h3 class="lang-en">🗣️ Improving Oral Expression from - <span class="dynamic-price" data-base-price="6000">6 000 FCFA</span></h3>
+                    <p class="lang-fr">Développez votre éloquence et votre clarté d'expression</p>
+                    <p class="lang-en">Develop your eloquence and clarity of expression</p>
+                </div>
+
+                <div class="service-detail">
+                    <h3 class="lang-fr">🎤 Communication en Public à partir de - <span class="dynamic-price" data-base-price="15000">15 000 FCFA</span></h3>
+	            <h3 class="lang-en">🎤 Public Communication from - <span class="dynamic-price" data-base-price="15000">15 000 FCFA</span></h3>
+                    <p class="lang-fr">Apprenez à captiver votre audience et gérer le trac</p>
+                    <p class="lang-en">Learn to captivate your audience and manage stage fright</p>
+                </div>
+            </div>
+
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <strong class="lang-fr">Étude de situation approfondie</strong>
+                    <strong class="lang-en">In-depth situation study</strong>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <strong class="lang-fr">Plan d'action concret</strong>
+                    <strong class="lang-en">Concrete action plan</strong>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <strong class="lang-fr">Objectifs Mesurables</strong>
+                    <strong class="lang-en">Measurable Goals</strong>
+                </div>
+                 <div class="step">
+                    <div class="step-number">4</div>
+                    <strong class="lang-fr">Identification des blocages</strong>
+                    <strong class="lang-en">Identifying blockages</strong>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <strong class="lang-fr">Suivi Personnalisé</strong>
+                    <strong class="lang-en">Personal Follow-up</strong>
+                </div>
+            </div>
+
+            <p class="lang-fr" style="margin-top: 20px; text-align: center; font-weight: 600;">
+                📊 A l’issue de notre échange si besoin se présente, Un plan de travail vous est transmis dans les 24h, Tarification modulable selon le service choisi.<br>
+               Apres paiement, un Suivi personnalisé est mis en place pour Des Résultats sur et durables. (coaching partiel ou formation complète).
+            </p>
+            <p class="lang-en" style="margin-top: 20px; text-align: center; font-weight: 600;">
+                📊At the end of our discussion, if necessary, a work plan will be sent to you within 24 hours. Pricing is flexible depending on the service chosen.<br>
+                After payment, personalized follow-up is set up for sure and lasting results. (partial coaching or complete training).
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="lang-fr">💎 Packs d'Accompagnement</h2>
+            <h2 class="lang-en">💎 Support Packages</h2>
+            
+            <div class="solidarity-message">
+                <p class="lang-fr">❤️ <strong>Engagement Solidaire :</strong> Chaque pack souscrit contribue à financer des séances gratuites pour les personnes dans le besoin. Votre engagement personnel devient un acte de solidarité qui permet à d'autres de bénéficier d'une écoute bienveillante.</p>
+                <p class="lang-en">❤️ <strong>Solidarity Commitment:</strong> Each package subscription helps fund free sessions for people in need. Your personal commitment becomes an act of solidarity that allows others to benefit from compassionate listening.</p>
+            </div>
+
+            <div class="packs-container">
+                <div class="pack pack-bronze">
+                    <div class="pack-name">Bronze</div>
+                    <div class="pack-price" data-base-price="15000">15 000 FCFA</div>
+                    <ul class="pack-features">
+                        <li class="lang-fr">4 séances d'écoute active (1h chacune)</li>
+                        <li class="lang-en">4 active listening sessions (1h each)</li>
+                        <li class="lang-fr">1 séance de coaching de vie</li>
+                        <li class="lang-en">1 life coaching session</li>
+                        <li class="lang-fr">Suivi par email pendant 1 mois</li>
+                        <li class="lang-en">Email follow-up for 1 month</li>
+                        <li class="lang-fr">Plan d'action personnalisé</li>
+                        <li class="lang-en">Personalized action plan</li>
+                        <li class="lang-fr">🎁 Offre 1 séance gratuite à une personne dans le besoin</li>
+                        <li class="lang-en">🎁 Provides 1 free session to someone in need</li>
+                    </ul>
+                </div>
+
+                <div class="pack pack-silver">
+                    <div class="pack-name lang-fr">Argent</div>
+                    <div class="pack-name lang-en">Silver</div>
+                    <div class="pack-price" data-base-price="35000">35 000 FCFA</div>
+                    <ul class="pack-features">
+                        <li class="lang-fr">8 séances d'écoute active (1h chacune)</li>
+                        <li class="lang-en">8 active listening sessions (1h each)</li>
+                        <li class="lang-fr">3 séances de coaching de vie</li>
+                        <li class="lang-en">3 life coaching sessions</li>
+                        <li class="lang-fr">1 module au choix (expression orale OU langage corporel)</li>
+                        <li class="lang-en">1 module of choice (oral expression OR body language)</li>
+                        <li class="lang-fr">Suivi WhatsApp prioritaire pendant 2 mois</li>
+                        <li class="lang-en">Priority WhatsApp follow-up for 2 months</li>
+                        <li class="lang-fr">Programme personnalisé détaillé</li>
+                        <li class="lang-en">Detailed personalized program</li>
+                        <li class="lang-fr">Exercices pratiques hebdomadaires</li>
+                        <li class="lang-en">Weekly practical exercises</li>
+                        <li class="lang-fr">🎁 Offre 3 séances gratuites à des personnes dans le besoin</li>
+                        <li class="lang-en">🎁 Provides 3 free sessions to people in need</li>
+                    </ul>
+                </div>
+
+                <div class="pack pack-gold">
+                    <div class="pack-name">Gold</div>
+                    <div class="pack-price" data-base-price="65000">65 000 FCFA</div>
+                    <ul class="pack-features">
+                        <li class="lang-fr">12 séances d'écoute active (1h chacune)</li>
+                        <li class="lang-en">12 active listening sessions (1h each)</li>
+                        <li class="lang-fr">6 séances de coaching de vie approfondi</li>
+                        <li class="lang-en">6 in-depth life coaching sessions</li>
+                        <li class="lang-fr">2 modules au choix parmi tous les services</li>
+                        <li class="lang-en">2 modules of choice from all services</li>
+                        <li class="lang-fr">Programme de renforcement de confiance (complet)</li>
+                        <li class="lang-en">Complete confidence building program</li>
+                        <li class="lang-fr">Suivi intensif pendant 3 mois (WhatsApp + appels)</li>
+                        <li class="lang-en">Intensive 3-month follow-up (WhatsApp + calls)</li>
+                        <li class="lang-fr">Bilan mensuel personnalisé</li>
+                        <li class="lang-en">Monthly personalized assessment</li>
+                        <li class="lang-fr">Outils et ressources exclusifs</li>
+                        <li class="lang-en">Exclusive tools and resources</li>
+                        <li class="lang-fr">🎁 Offre 6 séances gratuites à des personnes dans le besoin</li>
+                        <li class="lang-en">🎁 Provides 6 free sessions to people in need</li>
+                    </ul>
+                </div>
+
+                <div class="pack pack-diamond">
+                    <div class="pack-name">Diamond</div>
+                    <div class="pack-price" data-base-price="120000">120 000 FCFA</div>
+                    <span class="special-badge" style="background: #4a9eba; margin-bottom: 15px;">PREMIUM</span>
+                    <ul class="pack-features">
+                        <li class="lang-fr">20 séances d'écoute active (1h chacune)</li>
+                        <li class="lang-en">20 active listening sessions (1h each)</li>
+                        <li class="lang-fr">10 séances de coaching de vie sur mesure</li>
+                        <li class="lang-en">10 customized life coaching sessions</li>
+                        <li class="lang-fr">TOUS les modules de développement personnel inclus</li>
+                        <li class="lang-en">ALL personal development modules included</li>
+                        <li class="lang-fr">Programme complet de transformation (6 mois)</li>
+                        <li class="lang-en">Complete transformation program (6 months)</li>
+                        <li class="lang-fr">Disponibilité prioritaire 7j/7</li>
+                        <li class="lang-en">Priority availability 7 days/week</li>
+                        <li class="lang-fr">Suivi illimité par WhatsApp et appels</li>
+                        <li class="lang-en">Unlimited WhatsApp and call follow-up</li>
+                        <li class="lang-fr">Bilans hebdomadaires personnalisés</li>
+                        <li class="lang-en">Weekly personalized assessments</li>
+                        <li class="lang-fr">Accompagnement situations d'urgence inclus</li>
+                        <li class="lang-en">Emergency situation support included</li>
+                        <li class="lang-fr">Kit complet d'outils de développement</li>
+                        <li class="lang-en">Complete development toolkit</li>
+                        <li class="lang-fr">Garantie satisfaction et réajustement</li>
+                        <li class="lang-en">Satisfaction guarantee and readjustment</li>
+                        <li class="lang-fr">🎁 Offre 12 séances gratuites à des personnes dans le besoin</li>
+                        <li class="lang-en">🎁 Provides 12 free sessions to people in need</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="lang-fr">💳 Moyens de Paiement Acceptés</h2>
+            <h2 class="lang-en">💳 Accepted Payment Methods</h2>
+            
+            <div class="payment-methods">
+                <div class="payment-card">
+                    <h4>📱 Orange Money</h4>
+                    <div class="payment-number">690 820 858</div>
+                    <p class="lang-fr">Paiement semi-automatique : composez #150# et suivez les instructions</p>
+                    <p class="lang-en">Semi-automatic payment: dial #150# and follow instructions</p>
+                </div>
+
+                <div class="payment-card">
+                    <h4>📱 MTN Mobile Money</h4>
+                    <div class="payment-number">675 302 644</div>
+                    <p class="lang-fr">Paiement semi-automatique : composez *126# et suivez les instructions</p>
+                    <p class="lang-en">Semi-automatic payment: dial *126# and follow instructions</p>
+                </div>
+
+                <div class="payment-card">
+                    <h4>💵 PayPal (International)</h4>
+                    <div class="payment-number">augusteromeo@yahoo.fr</div>
+                    <p class="lang-fr">Paiement sécurisé pour les clients internationaux</p>
+                    <p class="lang-en">Secure payment for international clients</p>
+                </div>
+
+                <div class="payment-card">
+                    <h4>🌍 Transferts Internationaux</h4>
+                    <p class="lang-fr">
+                        • Western Union<br>
+                        • MoneyGram<br>
+                        • Taptap Send<br>
+                        • Sendwave<br>
+                        • Dohone
+                    </p>
+                    <p class="lang-en">
+                        • Western Union<br>
+                        • MoneyGram<br>
+                        • Taptap Send<br>
+                        • Sendwave<br>
+                        • Dohone
+                    </p>
+                </div>
+
+                <div class="payment-card" style="grid-column: 1/-1; background: #fff3cd; border-left-color: var(--accent);">
+                    <h4 class="lang-fr">💡 Comment payer depuis l'étranger vers Mobile Money ?</h4>
+                    <h4 class="lang-en">💡 How to pay from abroad to Mobile Money?</h4>
+                    <div style="margin-top: 15px; text-align: left;">
+                        <p class="lang-fr"><strong>Option 1 - Via Taptap Send ou Sendwave :</strong><br>
+                        1. Téléchargez l'application Taptap Send ou Sendwave<br>
+                        2. Créez un compte et ajoutez votre mode de paiement<br>
+                        3. Sélectionnez "Cameroun" comme pays de destination<br>
+                        4. Choisissez "Mobile Money" et entrez le numéro Orange (690820858) ou MTN (675302644)<br>
+                        5. Le montant arrive directement sur mon compte Mobile Money ✓</p>
+
+                        <p class="lang-en"><strong>Option 1 - Via Taptap Send or Sendwave:</strong><br>
+                        1. Download Taptap Send or Sendwave app<br>
+                        2. Create an account and add your payment method<br>
+                        3. Select "Cameroon" as destination country<br>
+                        4. Choose "Mobile Money" and enter Orange number (690820858) or MTN (675302644)<br>
+                        5. Amount arrives directly to my Mobile Money account ✓</p>
+
+                        <p class="lang-fr" style="margin-top: 15px;"><strong>Option 2 - Via Western Union / MoneyGram :</strong><br>
+                        1. Effectuez le transfert en ligne ou en agence<br>
+                        2. Choisissez l'option "Retrait Mobile Money" (disponible pour le Cameroun)<br>
+                        3. Utilisez mes coordonnées : Auguste Romeo NJIPMOU NOUGUEP<br>
+                        4. Numéro Mobile Money : 690820858 (Orange) ou 675302644 (MTN)<br>
+                        5. Je reçois le paiement instantanément sur mon téléphone ✓</p>
+
+                        <p class="lang-en" style="margin-top: 15px;"><strong>Option 2 - Via Western Union / MoneyGram:</strong><br>
+                        1. Make the transfer online or at an agency<br>
+                        2. Choose "Mobile Money Withdrawal" option (available for Cameroon)<br>
+                        3. Use my details: Auguste Romeo NJIPMOU NOUGUEP<br>
+                        4. Mobile Money number: 690820858 (Orange) or 675302644 (MTN)<br>
+                        5. I receive payment instantly on my phone ✓</p>
+
+                        <p class="lang-fr" style="margin-top: 15px;"><strong>Option 3 - PayPal :</strong><br>
+                        Envoyez le montant directement à : augusteromeo@yahoo.fr<br>
+                        (Des frais PayPal peuvent s'appliquer)</p>
+
+                        <p class="lang-en" style="margin-top: 15px;"><strong>Option 3 - PayPal:</strong><br>
+                        Send amount directly to: augusteromeo@yahoo.fr<br>
+                        (PayPal fees may apply)</p>
+                    </div>
+                </div>
+
+                <div class="payment-card" style="grid-column: 1/-1;">
+                    <h4>💵 Espèces (En personne - Cameroun uniquement)</h4>
+                    <p class="lang-fr">Paiement en espèces accepté lors de nos rencontres en présentiel</p>
+                    <p class="lang-en">Cash payment accepted during in-person meetings</p>
+                </div>
+            </div>
+
+            <p class="lang-fr" style="margin-top: 20px; padding: 15px; background: #e3f2fd; border-radius: 8px; border-left: 4px solid var(--primary);">
+                <strong>💡 Note importante :</strong> Une fois le paiement effectué, veuillez me contacter par WhatsApp ou téléphone pour confirmer votre transaction. Votre réservation sera confirmée immédiatement après vérification.
+            </p>
+            <p class="lang-en" style="margin-top: 20px; padding: 15px; background: #e3f2fd; border-radius: 8px; border-left: 4px solid var(--primary);">
+                <strong>💡 Important note:</strong> Once payment is made, please contact me via WhatsApp or phone to confirm your transaction. Your booking will be confirmed immediately after verification.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="lang-fr">📞 Réservation & Contact</h2>
+            <h2 class="lang-en">📞 Booking & Contact</h2>
+            
+            <p class="lang-fr" style="text-align: center; font-size: 1.1em; margin-bottom: 30px;">
+                Les réservations se font exclusivement par téléphone ou WhatsApp après un premier échange. Je prends le temps d'échanger avec chaque personne pour comprendre ses besoins et proposer l'accompagnement le plus adapté.
+            </p>
+            <p class="lang-en" style="text-align: center; font-size: 1.1em; margin-bottom: 30px;">
+                Bookings are made exclusively by phone or WhatsApp after an initial exchange. I take the time to talk with each person to understand their needs and offer the most suitable support.
+            </p>
+
+            <div class="contact-buttons">
+                <a href="https://wa.me/237620396043" class="btn btn-whatsapp" target="_blank">
+                    <span class="whatsapp-icon"></span>
+                    <span class="lang-fr">WhatsApp: +237 620 396 043</span>
+                    <span class="lang-en">WhatsApp: +237 620 396 043</span>
+                </a>
+                
+                <a href="tel:+237620396043" class="btn btn-emergency">
+                    <span>🆘</span>
+                    <span class="lang-fr">Urgence: +237 620 396 043</span>
+                    <span class="lang-en">Emergency: +237 620 396 043</span>
+                </a>
+                
+                <a href="mailto:augusteromeo21@gmail.com" class="btn btn-primary">
+                    <span>✉️</span>
+                    <span>augusteromeo21@gmail.com</span>
+                </a>
+            </div>
+
+            <div style="background: var(--warm); padding: 25px; border-radius: 10px; margin-top: 30px; text-align: center;">
+                <p class="lang-fr" style="font-size: 1.1em; margin-bottom: 10px;">
+                    <strong>📍 Indicatif pays : +237 (Cameroun)</strong>
+                </p>
+                <p class="lang-en" style="font-size: 1.1em; margin-bottom: 10px;">
+                    <strong>📍 Country code: +237 (Cameroon)</strong>
+                </p>
+                <p class="lang-fr">
+                    Que vous soyez au Cameroun ou à l'international, je suis disponible pour vous accompagner dans votre démarche de bien-être et de développement personnel.
+                </p>
+                <p class="lang-en">
+                    Whether you are in Cameroon or internationally, I am available to support you in your wellness and personal development journey.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Auguste Romeo NJIPMOU NOUGUEP - <span class="lang-fr">Tous droits réservés</span><span class="lang-en">All rights reserved</span></p>
+        <p style="margin-top: 10px; opacity: 0.9;" class="lang-fr">
+            Services d'écoute active et empathique | Coaching de vie | Développement personnel
+        </p>
+        <p style="margin-top: 10px; opacity: 0.9;" class="lang-en">
+            Active and empathic listening services | Life coaching | Personal development
+        </p>
+        <p style="margin-top: 15px; font-size: 0.9em;">
+            <a href="https://wa.me/237620396043" style="color: #25D366; text-decoration: none;">📱 WhatsApp</a> | 
+            <a href="tel:+237620396043" style="color: white; text-decoration: none;">📞 +237 620 396 043</a> | 
+            <a href="mailto:augusteromeo21@gmail.com" style="color: white; text-decoration: none;">✉️ Email</a>
+        </p>
+    </footer>
+
+    <script>
+        // ============================================
+        // SCRIPT DE TARIFICATION AUTOMATIQUE PPA
+        // Détection automatique du pays et ajustement des prix
+        // ============================================
+
+        (function() {
+            'use strict';
+
+            // Configuration des taux PPA par pays avec données complètes
+            const ppaRates = {
+                // Afrique Centrale (Zone FCFA)
+                CM: { rate: 1.0, currency: 'FCFA', symbol: 'FCFA', name: 'Cameroun', nameFr: 'Cameroun', nameEn: 'Cameroon', payments: 'Mobile Money, Orange Money, Cash', paymentsFr: 'Mobile Money, Orange Money, Espèces', paymentsEn: 'Mobile Money, Orange Money, Cash' },
+                GA: { rate: 1.25, currency: 'FCFA', symbol: 'FCFA', name: 'Gabon', nameFr: 'Gabon', nameEn: 'Gabon', payments: 'Mobile Money', paymentsFr: 'Mobile Money', paymentsEn: 'Mobile Money' },
+                CG: { rate: 1.1, currency: 'FCFA', symbol: 'FCFA', name: 'Congo', nameFr: 'Congo', nameEn: 'Congo', payments: 'Mobile Money', paymentsFr: 'Mobile Money', paymentsEn: 'Mobile Money' },
+                TD: { rate: 0.85, currency: 'FCFA', symbol: 'FCFA', name: 'Tchad', nameFr: 'Tchad', nameEn: 'Chad', payments: 'Mobile Money', paymentsFr: 'Mobile Money', paymentsEn: 'Mobile Money' },
+                CF: { rate: 0.75, currency: 'FCFA', symbol: 'FCFA', name: 'Centrafrique', nameFr: 'Centrafrique', nameEn: 'Central African Republic', payments: 'Mobile Money', paymentsFr: 'Mobile Money', paymentsEn: 'Mobile Money' },
+                GQ: { rate: 1.3, currency: 'FCFA', symbol: 'FCFA', name: 'Guinée Équatoriale', nameFr: 'Guinée Équatoriale', nameEn: 'Equatorial Guinea', payments: 'Mobile Money', paymentsFr: 'Mobile Money', paymentsEn: 'Mobile Money' },
+
+                // Afrique de l'Ouest (Zone FCFA)
+                SN: { rate: 0.85, currency: 'FCFA', symbol: 'FCFA', name: 'Sénégal', nameFr: 'Sénégal', nameEn: 'Senegal', payments: 'Mobile Money, Orange Money, Wave', paymentsFr: 'Mobile Money, Orange Money, Wave', paymentsEn: 'Mobile Money, Orange Money, Wave' },
+                CI: { rate: 0.90, currency: 'FCFA', symbol: 'FCFA', name: 'Côte d\'Ivoire', nameFr: 'Côte d\'Ivoire', nameEn: 'Ivory Coast', payments: 'Mobile Money, Orange Money, Wave', paymentsFr: 'Mobile Money, Orange Money, Wave', paymentsEn: 'Mobile Money, Orange Money, Wave' },
+                BJ: { rate: 0.80, currency: 'FCFA', symbol: 'FCFA', name: 'Bénin', nameFr: 'Bénin', nameEn: 'Benin', payments: 'Mobile Money, Orange Money', paymentsFr: 'Mobile Money, Orange Money', paymentsEn: 'Mobile Money, Orange Money' },
+                TG: { rate: 0.82, currency: 'FCFA', symbol: 'FCFA', name: 'Togo', nameFr: 'Togo', nameEn: 'Togo', payments: 'Mobile Money, Orange Money', paymentsFr: 'Mobile Money, Orange Money', paymentsEn: 'Mobile Money, Orange Money' },
+                BF: { rate: 0.83, currency: 'FCFA', symbol: 'FCFA', name: 'Burkina Faso', nameFr: 'Burkina Faso', nameEn: 'Burkina Faso', payments: 'Mobile Money, Orange Money', paymentsFr: 'Mobile Money, Orange Money', paymentsEn: 'Mobile Money, Orange Money' },
+                ML: { rate: 0.81, currency: 'FCFA', symbol: 'FCFA', name: 'Mali', nameFr: 'Mali', nameEn: 'Mali', payments: 'Mobile Money, Orange Money', paymentsFr: 'Mobile Money, Orange Money', paymentsEn: 'Mobile Money, Orange Money' },
+                NE: { rate: 0.79, currency: 'FCFA', symbol: 'FCFA', name: 'Niger', nameFr: 'Niger', nameEn: 'Niger', payments: 'Mobile Money, Orange Money', paymentsFr: 'Mobile Money, Orange Money', paymentsEn: 'Mobile Money, Orange Money' },
+                GN: { rate: 0.75, currency: 'GNF', symbol: 'GNF', name: 'Guinée', nameFr: 'Guinée', nameEn: 'Guinea', payments: 'Mobile Money, Orange Money', paymentsFr: 'Mobile Money, Orange Money', paymentsEn: 'Mobile Money, Orange Money' },
+
+                // Afrique Centrale/Est (Hors FCFA)
+                CD: { rate: 0.70, currency: 'CDF', symbol: 'FC', name: 'RD Congo', nameFr: 'RD Congo', nameEn: 'DR Congo', payments: 'Mobile Money, Orange Money', paymentsFr: 'Mobile Money, Orange Money', paymentsEn: 'Mobile Money, Orange Money' },
+
+                // Europe
+                FR: { rate: 2.5, currency: 'EUR', symbol: '€', name: 'France', nameFr: 'France', nameEn: 'France', payments: 'PayPal, Bank Transfer', paymentsFr: 'PayPal, Virement Bancaire', paymentsEn: 'PayPal, Bank Transfer' },
+                BE: { rate: 2.4, currency: 'EUR', symbol: '€', name: 'Belgique', nameFr: 'Belgique', nameEn: 'Belgium', payments: 'PayPal, Bank Transfer', paymentsFr: 'PayPal, Virement Bancaire', paymentsEn: 'PayPal, Bank Transfer' },
+                CH: { rate: 3.2, currency: 'CHF', symbol: 'CHF', name: 'Suisse', nameFr: 'Suisse', nameEn: 'Switzerland', payments: 'PayPal, Bank Transfer', paymentsFr: 'PayPal, Virement Bancaire', paymentsEn: 'PayPal, Bank Transfer' },
+                DE: { rate: 2.6, currency: 'EUR', symbol: '€', name: 'Allemagne', nameFr: 'Allemagne', nameEn: 'Germany', payments: 'PayPal, Bank Transfer', paymentsFr: 'PayPal, Virement Bancaire', paymentsEn: 'PayPal, Bank Transfer' },
+                ES: { rate: 2.3, currency: 'EUR', symbol: '€', name: 'Espagne', nameFr: 'Espagne', nameEn: 'Spain', payments: 'PayPal, Bank Transfer', paymentsFr: 'PayPal, Virement Bancaire', paymentsEn: 'PayPal, Bank Transfer' },
+                IT: { rate: 2.2, currency: 'EUR', symbol: '€', name: 'Italie', nameFr: 'Italie', nameEn: 'Italy', payments: 'PayPal, Bank Transfer', paymentsFr: 'PayPal, Virement Bancaire', paymentsEn: 'PayPal, Bank Transfer' },
+                GB: { rate: 2.7, currency: 'GBP', symbol: '£', name: 'Royaume-Uni', nameFr: 'Royaume-Uni', nameEn: 'United Kingdom', payments: 'PayPal, Bank Transfer', paymentsFr: 'PayPal, Virement Bancaire', paymentsEn: 'PayPal, Bank Transfer' },
+                NL: { rate: 2.5, currency: 'EUR', symbol: '€', name: 'Pays-Bas', nameFr: 'Pays-Bas', nameEn: 'Netherlands', payments: 'PayPal, Bank Transfer', paymentsFr: 'PayPal, Virement Bancaire', paymentsEn: 'PayPal, Bank Transfer' },
+                PT: { rate: 2.0, currency: 'EUR', symbol: '€', name: 'Portugal', nameFr: 'Portugal', nameEn: 'Portugal', payments: 'PayPal, Bank Transfer', paymentsFr: 'PayPal, Virement Bancaire', paymentsEn: 'PayPal, Bank Transfer' },
+
+                // Amérique du Nord
+                CA: { rate: 2.3, currency: 'CAD', symbol: 'CAD', name: 'Canada', nameFr: 'Canada', nameEn: 'Canada', payments: 'PayPal, Bank Transfer', paymentsFr: 'PayPal, Virement Bancaire', paymentsEn: 'PayPal, Bank Transfer' },
+                US: { rate: 2.8, currency: 'USD', symbol: '$', name: 'États-Unis', nameFr: 'États-Unis', nameEn: 'United States', payments: 'PayPal, Bank Transfer', paymentsFr: 'PayPal, Virement Bancaire', paymentsEn: 'PayPal, Bank Transfer' },
+
+                // Amérique du Sud
+                BR: { rate: 1.8, currency: 'BRL', symbol: 'R$', name: 'Brésil', nameFr: 'Brésil', nameEn: 'Brazil', payments: 'PayPal, Pix', paymentsFr: 'PayPal, Pix', paymentsEn: 'PayPal, Pix' },
+                AR: { rate: 1.4, currency: 'ARS', symbol: '$', name: 'Argentine', nameFr: 'Argentine', nameEn: 'Argentina', payments: 'PayPal, Bank Transfer', paymentsFr: 'PayPal, Virement Bancaire', paymentsEn: 'PayPal, Bank Transfer' },
+
+                // Afrique du Nord
+                MA: { rate: 1.2, currency: 'MAD', symbol: 'MAD', name: 'Maroc', nameFr: 'Maroc', nameEn: 'Morocco', payments: 'PayPal, Bank Transfer', paymentsFr: 'PayPal, Virement Bancaire', paymentsEn: 'PayPal, Bank Transfer' },
+                TN: { rate: 1.1, currency: 'TND', symbol: 'TND', name: 'Tunisie', nameFr: 'Tunisie', nameEn: 'Tunisia', payments: 'PayPal, Bank Transfer', paymentsFr: 'PayPal, Virement Bancaire', paymentsEn: 'PayPal, Bank Transfer' },
+                DZ: { rate: 1.0, currency: 'DZD', symbol: 'DZD', name: 'Algérie', nameFr: 'Algérie', nameEn: 'Algeria', payments: 'PayPal, Bank Transfer', paymentsFr: 'PayPal, Virement Bancaire', paymentsEn: 'PayPal, Bank Transfer' },
+                EG: { rate: 0.9, currency: 'EGP', symbol: 'EGP', name: 'Égypte', nameFr: 'Égypte', nameEn: 'Egypt', payments: 'PayPal, Bank Transfer', paymentsFr: 'PayPal, Virement Bancaire', paymentsEn: 'PayPal, Bank Transfer' },
+
+                // Afrique Australe et de l'Est
+                ZA: { rate: 1.5, currency: 'ZAR', symbol: 'R', name: 'Afrique du Sud', nameFr: 'Afrique du Sud', nameEn: 'South Africa', payments: 'PayPal, Bank Transfer', paymentsFr: 'PayPal, Virement Bancaire', paymentsEn: 'PayPal, Bank Transfer' },
+                NG: { rate: 1.3, currency: 'NGN', symbol: '₦', name: 'Nigéria', nameFr: 'Nigéria', nameEn: 'Nigeria', payments: 'PayPal, Bank Transfer', paymentsFr: 'PayPal, Virement Bancaire', paymentsEn: 'PayPal, Bank Transfer' },
+                KE: { rate: 1.4, currency: 'KES', symbol: 'KSh', name: 'Kenya', nameFr: 'Kenya', nameEn: 'Kenya', payments: 'M-Pesa, PayPal', paymentsFr: 'M-Pesa, PayPal', paymentsEn: 'M-Pesa, PayPal' },
+                GH: { rate: 1.6, currency: 'GHS', symbol: 'GH₵', name: 'Ghana', nameFr: 'Ghana', nameEn: 'Ghana', payments: 'Mobile Money, PayPal', paymentsFr: 'Mobile Money, PayPal', paymentsEn: 'Mobile Money, PayPal' },
+                ET: { rate: 0.8, currency: 'ETB', symbol: 'Br', name: 'Éthiopie', nameFr: 'Éthiopie', nameEn: 'Ethiopia', payments: 'Bank Transfer', paymentsFr: 'Virement Bancaire', paymentsEn: 'Bank Transfer' },
+                UG: { rate: 1.2, currency: 'UGX', symbol: 'USh', name: 'Ouganda', nameFr: 'Ouganda', nameEn: 'Uganda', payments: 'Mobile Money', paymentsFr: 'Mobile Money', paymentsEn: 'Mobile Money' },
+                TZ: { rate: 1.1, currency: 'TZS', symbol: 'TSh', name: 'Tanzanie', nameFr: 'Tanzanie', nameEn: 'Tanzania', payments: 'Mobile Money', paymentsFr: 'Mobile Money', paymentsEn: 'Mobile Money' },
+                RW: { rate: 1.3, currency: 'RWF', symbol: 'FRw', name: 'Rwanda', nameFr: 'Rwanda', nameEn: 'Rwanda', payments: 'Mobile Money', paymentsFr: 'Mobile Money', paymentsEn: 'Mobile Money' }
+            };
+
+            // Variables globales
+            let userCountry = 'CM';
+            let userCountryData = ppaRates['CM'];
+            let isEnglish = false;
+
+            // ============================================
+            // FONCTIONS DE CALCUL ET FORMATAGE
+            // ============================================
+
+            function calculatePrice(basePrice) {
+                const convertedPrice = Math.round(basePrice * userCountryData.rate);
+                return formatPrice(convertedPrice, userCountryData);
+            }
+
+            function formatPrice(price, countryData) {
+                // Pour les devises FCFA et autres devises africaines avec grands nombres
+                if (['FCFA', 'CDF', 'GNF', 'UGX', 'TZS', 'RWF', 'NGN', 'KES'].includes(countryData.currency)) {
+                    return `${price.toLocaleString('fr-FR')} ${countryData.symbol}`;
+                }
+                
+                // Pour les devises internationales (conversion en décimales)
+                const decimalPrice = (price / 1000).toFixed(2);
+                
+                // Symbole avant le montant
+                if (['$', 'R$', '₦', 'R', 'KSh', 'USh', 'TSh', 'FRw', 'Br', 'GH₵'].includes(countryData.symbol)) {
+                    return `${countryData.symbol}${decimalPrice}`;
+                }
+                
+                // Symbole après le montant
+                if (['€', '£'].includes(countryData.symbol)) {
+                    return `${decimalPrice}${countryData.symbol}`;
+                }
+                
+                // Code devise après le montant
+                return `${decimalPrice} ${countryData.symbol}`;
+            }
+
+            // ============================================
+            // DÉTECTION AUTOMATIQUE DU PAYS
+            // ============================================
+
+            async function detectUserCountry() {
+                console.log('🌍 Démarrage de la détection du pays...');
+                
+                try {
+                    // Tentative avec ipapi.co
+                    const response = await fetch('https://ipapi.co/json/', {
+                        timeout: 5000
+                    });
+                    
+                    if (!response.ok) throw new Error('Erreur API ipapi.co');
+                    
+                    const data = await response.json();
+                    const detectedCountry = data.country_code;
+                    
+                    console.log('✅ Pays détecté:', detectedCountry, '-', data.country_name);
+                    
+                    if (ppaRates[detectedCountry]) {
+                        userCountry = detectedCountry;
+                        userCountryData = ppaRates[detectedCountry];
+                        console.log('💰 Taux PPA appliqué:', userCountryData.rate);
+                    } else {
+                        // Si le pays n'est pas dans notre liste, utiliser USA par défaut
+                        console.log('⚠️ Pays non configuré, utilisation des tarifs USA');
+                        userCountry = 'US';
+                        userCountryData = ppaRates['US'];
+                    }
+                    
+                } catch (error) {
+                    console.log('❌ Erreur de détection:', error.message);
+                    console.log('🔄 Tentative de détection via API alternative...');
+                    
+                    try {
+                        // API alternative
+                        const altResponse = await fetch('https://api.country.is/');
+                        const altData = await altResponse.json();
+                        const detectedCountry = altData.country;
+                        
+                        if (ppaRates[detectedCountry]) {
+                            userCountry = detectedCountry;
+                            userCountryData = ppaRates[detectedCountry];
+                            console.log('✅ Pays détecté (API alternative):', detectedCountry);
+                        } else {
+                            throw new Error('Pays non configuré');
+                        }
+                    } catch (altError) {
+                        console.log('⚠️ Utilisation du pays par défaut (Cameroun)');
+                        userCountry = 'CM';
+                        userCountryData = ppaRates['CM'];
+                    }
+                }
+                
+                // Appliquer les changements
+                updateAllPrices();
+                updateCountryInfo();
+                console.log('✨ Tarification mise à jour avec succès!');
+            }
+
+            // ============================================
+            // MISE À JOUR DES PRIX
+            // ============================================
+
+            function updateAllPrices() {
+                // Mise à jour des prix des services individuels
+                const servicePriceElements = document.querySelectorAll('.service-price');
+                
+                servicePriceElements.forEach((el) => {
+                    const basePrice = parseInt(el.getAttribute('data-base-price'));
+                    const isWednesday = el.getAttribute('data-wednesday') === 'true';
+                    
+                    // Cas spécial pour le mercredi solidaire
+                    if (isWednesday) {
+                        if (userCountry === 'CM') {
+                            el.textContent = isEnglish ? 'FREE' : 'GRATUIT';
+                            el.style.color = 'var(--success)';
+                            el.style.fontWeight = 'bold';
+                        } else {
+                            el.textContent = calculatePrice(700);
+                            el.style.color = 'var(--accent)';
+                        }
+                    } else {
+                        el.textContent = calculatePrice(basePrice);
+                    }
+                });
+
+                // Mise à jour des prix des packs
+                const packPriceElements = document.querySelectorAll('.pack-price');
+                
+                packPriceElements.forEach((el) => {
+                    const basePrice = parseInt(el.getAttribute('data-base-price'));
+                    el.textContent = calculatePrice(basePrice);
+                });
+
+                // Mise à jour des prix des services complémentaires
+                const dynamicPriceElements = document.querySelectorAll('.dynamic-price');
+                
+                dynamicPriceElements.forEach((el) => {
+                    const basePrice = parseInt(el.getAttribute('data-base-price'));
+                    el.textContent = calculatePrice(basePrice);
+                });
+
+                console.log('💵 Tous les prix ont été mis à jour');
+            }
+
+            // ============================================
+            // MISE À JOUR DES INFORMATIONS PAYS
+            // ============================================
+
+            function updateCountryInfo() {
+                const countryName = isEnglish ? userCountryData.nameEn : userCountryData.nameFr;
+                const payments = isEnglish ? userCountryData.paymentsEn : userCountryData.paymentsFr;
+                
+                const infoHTML = `
+                    <div style="background: linear-gradient(135deg, #e8f4f8 0%, #d4e9f7 100%); padding: 25px; border-radius: 12px; margin: 20px 0; border-left: 5px solid var(--primary); box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                        <h3 style="color: var(--primary); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; font-size: 1.3em;">
+                            <span style="font-size: 1.5em;">🌍</span>
+                            <span class="lang-fr">Tarification Adaptée pour ${countryName}</span>
+                            <span class="lang-en">Pricing Adapted for ${countryName}</span>
+                        </h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; background: white; padding: 20px; border-radius: 8px;">
+                            <div style="text-align: center; padding: 15px; background: linear-gradient(135deg, #fff5e6 0%, #ffe6cc 100%); border-radius: 8px;">
+                                <div style="font-size: 2em; margin-bottom: 5px;">💰</div>
+                                <div style="font-weight: 600; color: var(--text); margin-bottom: 5px;" class="lang-fr">Votre devise</div>
+                                <div style="font-weight: 600; color: var(--text); margin-bottom: 5px;" class="lang-en">Your currency</div>
+                                <div style="color: var(--accent); font-size: 1.3em; font-weight: bold;">${userCountryData.currency}</div>
+                                <div style="color: var(--secondary); font-size: 1.1em;">(${userCountryData.symbol})</div>
+                            </div>
+                            <div style="text-align: center; padding: 15px; background: linear-gradient(135deg, #e8f4f8 0%, #d4e9f7 100%); border-radius: 8px;">
+                                <div style="font-size: 2em; margin-bottom: 5px;">📊</div>
+                                <div style="font-weight: 600; color: var(--text); margin-bottom: 5px;" class="lang-fr">Taux PPA</div>
+                                <div style="font-weight: 600; color: var(--text); margin-bottom: 5px;" class="lang-en">PPA Rate</div>
+                                <div style="color: var(--secondary); font-size: 1.5em; font-weight: bold;">${userCountryData.rate}x</div>
+                            </div>
+                            <div style="text-align: center; padding: 15px; background: linear-gradient(135deg, #d4f1d4 0%, #a8e6cf 100%); border-radius: 8px;">
+                                <div style="font-size: 2em; margin-bottom: 5px;">💳</div>
+                                <div style="font-weight: 600; color: var(--text); margin-bottom: 5px;" class="lang-fr">Paiements</div>
+                                <div style="font-weight: 600; color: var(--text); margin-bottom: 5px;" class="lang-en">Payments</div>
+                                <div style="color: var(--success); font-weight: 600; font-size: 0.95em; line-height: 1.4;">${payments}</div>
+                            </div>
+                        </div>
+                        <p style="margin-top: 20px; font-style: italic; text-align: center; color: #555; font-size: 1.05em; line-height: 1.6;">
+                            <span class="lang-fr">✨ Les prix affichés sont automatiquement adaptés au pouvoir d'achat de votre région pour garantir un accès équitable à nos services.</span>
+                            <span class="lang-en">✨ Displayed prices are automatically adapted to your region's purchasing power to ensure fair access to our services.</span>
+                        </p>
+                    </div>
+                `;
+                
+                const targetElement = document.getElementById('auto-pricing-info');
+                if (targetElement) {
+                    targetElement.innerHTML = infoHTML;
+                }
+
+                console.log('📍 Informations pays mises à jour');
+            }
+
+            // ============================================
+            // GESTION DE LA LANGUE
+            // ============================================
+
+            function detectLanguage() {
+                const userLang = navigator.language || navigator.userLanguage;
+                isEnglish = userLang.startsWith('en');
+                
+                if (isEnglish) {
+                    document.body.classList.add('english');
+                }
+                
+                console.log('🌐 Langue détectée:', isEnglish ? 'English' : 'Français');
+            }
+
+            function toggleLanguage() {
+                isEnglish = !isEnglish;
+                document.body.classList.toggle('english');
+                updateCountryInfo(); // Mettre à jour les infos pays avec la nouvelle langue
+                console.log('🔄 Langue changée:', isEnglish ? 'English' : 'Français');
+            }
+
+            // Exposer toggleLanguage globalement
+            window.toggleLanguage = toggleLanguage;
+
+            // ============================================
+            // GESTION DE L'IMAGE DE PROFIL
+            // ============================================
+
+            async function loadProfileImage() {
+                const profileImage = document.getElementById('profileImage');
+                if (!profileImage) return;
+
+                try {
+                    const imageFiles = [
+                        'IMG_20250114_173453.jpg',
+                        'image.jpg', 
+                        'image.jpeg', 
+                        'image.png', 
+                        'photo.jpg', 
+                        'photo.png', 
+                        'profile.jpg', 
+                        'profile.png'
+                    ];
+                    
+                    for (const filename of imageFiles) {
+                        try {
+                            const imageData = await window.fs.readFile(filename);
+                            const blob = new Blob([imageData], { type: 'image/jpeg' });
+                            const imageUrl = URL.createObjectURL(blob);
+                            profileImage.src = imageUrl;
+                            profileImage.style.display = 'block';
+                            console.log('📷 Image chargée:', filename);
+                            return;
+                        } catch (e) {
+                            // Continuer avec le prochain fichier
+                        }
+                    }
+                    console.log('⚠️ Aucune image de profil trouvée');
+                } catch (error) {
+                    console.log('❌ Erreur chargement image:', error.message);
+                }
+            }
+
+            // ============================================
+            // ANIMATIONS AU SCROLL
+            // ============================================
+
+            function initScrollAnimations() {
+                const observerOptions = {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -50px 0px'
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, observerOptions);
+
+                document.querySelectorAll('.section, .service-card, .pack').forEach(el => {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(20px)';
+                    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    observer.observe(el);
+                });
+
+                console.log('🎬 Animations au scroll initialisées');
+            }
+
+            // ============================================
+            // INITIALISATION PRINCIPALE
+            // ============================================
+
+            async function init() {
+                console.log('🚀 Initialisation du système de tarification automatique...');
+                console.log('================================================');
+                
+                // Étape 1: Détection de la langue
+                detectLanguage();
+                
+                // Étape 2: Chargement de l'image de profil
+                if (window.fs && window.fs.readFile) {
+                    await loadProfileImage();
+                }
+                
+                // Étape 3: Détection du pays et mise à jour des prix
+                await detectUserCountry();
+                
+                // Étape 4: Initialisation des animations
+                initScrollAnimations();
+                
+                // Étape 5: Log des informations de contact
+                console.log('================================================');
+                console.log('📞 INFORMATIONS DE CONTACT');
+                console.log('================================================');
+                console.log('Nom: Auguste Romeo NJIPMOU NOUGUEP');
+                console.log('WhatsApp: +237 620 396 043');
+                console.log('Email: augusteromeo21@gmail.com');
+                console.log('Orange Money: 690 820 858');
+                console.log('MTN MoMo: 675 302 644');
+                console.log('PayPal: augusteromeo@yahoo.fr');
+                console.log('================================================');
+                console.log('✅ Initialisation terminée avec succès!');
+                console.log('🌍 Pays:', userCountryData.name);
+                console.log('💰 Devise:', userCountryData.currency);
+                console.log('📊 Taux PPA:', userCountryData.rate + 'x');
+                console.log('================================================');
+            }
+
+            // ============================================
+            // DÉMARRAGE AUTOMATIQUE
+            // ============================================
+
+            // Attendre que le DOM soit complètement chargé
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                // Le DOM est déjà chargé
+                init();
+            }
+
+        })();
+
+        // Effet de scroll smooth
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
